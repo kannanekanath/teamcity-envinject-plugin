@@ -8,6 +8,10 @@
     <description>Inject environment/config/system variables from files</description>
     <download-url>https://github.com/calmstorm/teamcity-envinject-plugin/wiki</download-url>
     <email>kannan.ekanath@gmail.com</email>
+    <vendor>
+      <name>Open source/Github</name>
+      <url>https://github.com/calmstorm/teamcity-envinject-plugin/wiki</url>
+    </vendor>
   </info>
   <deployment use-separate-classloader="true" />
 </teamcity-plugin>
