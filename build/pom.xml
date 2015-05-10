@@ -48,7 +48,7 @@
                 <replacements>
                     <replacement>
                         <token>@Version@</token>
-                        <value>snapshot-${maven.build.timestamp}</value>
+                        <value>${tcpluginversion}</value>
                     </replacement>
                 </replacements>                        
             </configuration>

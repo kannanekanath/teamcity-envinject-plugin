@@ -26,7 +26,7 @@ from properties file or text content</b>
 <tr>
     <th>Properties inline content</th>
     <td>
-        <props:textProperty name="propertiesFileContent"/>
+        <textArea cols="40" rows="6" name="propertiesFileContent"></textArea>
     </td>
     <td>
         You can type any number of key=value pairs in this area
