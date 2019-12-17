@@ -39,6 +39,8 @@ public class EnvInjectServiceTest {
 
     private String sampleContent = "foo={system.build.number}bar\n" +
             "system.bug=xyz\n" +
+            "\n" +
+            "#This is a comment\n" +
             "env.abc=123";
 
     @Before
@@ -70,5 +72,10 @@ public class EnvInjectServiceTest {
         verify(mockBuildAgentConfiguration).addConfigurationParameter("foo", "3bar");
         verify(mockBuildAgentConfiguration).addEnvironmentVariable("abc", "123");
         verify(mockBuildAgentConfiguration).addSystemProperty("bug", "xyz");
+    }
+
+    @Test
+    public void testWithEmptyLinesAndComments() {
+
     }
 }

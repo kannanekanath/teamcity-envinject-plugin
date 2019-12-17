@@ -79,6 +79,9 @@ public class EnvInjectService extends BuildServiceAdapter {
         int propertiesCount = 0;
         while ((line = reader.readLine()) != null) {
             addDebugMessage("Read line [%s]", line);
+            if(isIgnoredLine(line)) {
+                continue;
+            }
             if (!line.contains("=")) {
                 throw new RunBuildException("The line [" + line + "] does contain property of the form key=value");
             }
@@ -99,6 +102,10 @@ public class EnvInjectService extends BuildServiceAdapter {
             propertiesCount++;
         }
         return propertiesCount;
+    }
+
+    private boolean isIgnoredLine(String line) {
+        return !StringUtils.hasLength(line) || line.startsWith("#");
     }
 
     private void addDebugMessage(String message, Object... args) {
